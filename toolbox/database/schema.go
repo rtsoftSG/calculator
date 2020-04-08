@@ -9,17 +9,17 @@ const (
 )
 
 type (
-	column struct {
+	Column struct {
 		name    string
 		colType ColumnType
 	}
 	SchemaBuilder interface {
 		SetTableName(string) SchemaBuilder
-		SetColumns(...column) SchemaBuilder
+		SetColumns(...Column) SchemaBuilder
 		Build() error
 	}
 )
 
-func Column(name string, colType ColumnType) column {
-	return column{name, colType}
+func NewColumn(name string, colType ColumnType) Column {
+	return Column{name, colType}
 }

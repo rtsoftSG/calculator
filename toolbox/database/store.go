@@ -1,15 +1,15 @@
 package database
 
 type (
-	field struct {
+	Field struct {
 		name  string
 		value interface{}
 	}
 	Storage interface {
-		Insert(tableName string, fields ...field) error
+		Insert(tableName string, fields ...Field) error
 	}
 )
 
-func Field(name string, value interface{}) field {
-	return field{name, value}
+func NewField(name string, value interface{}) Field {
+	return Field{name, value}
 }
