@@ -11,5 +11,5 @@ type Storage interface {
 	//Get get value from cache by key, if value for key not exists ErrKeyNotFound will be returned.
 	Get(key string) (string, error)
 	// Delete delete key and associated value from cache.
-	Delete(key string)
+	Delete(key string) error
 }
