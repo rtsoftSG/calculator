@@ -1,8 +1,8 @@
 package toplevel
 
 import (
-	"calculator/toolbox/cache"
-	"calculator/toolbox/database"
+	"plugin/toolbox/cache"
+	"plugin/toolbox/database"
 	"time"
 )
 
@@ -27,3 +27,10 @@ type Calculator interface {
 //
 // NewCalculator function with such signature has to be implemented in order to lookup calculator.
 type CalculatorFactoryFunc func(id string, cfg string, cache cache.Storage, qb database.QueryBuilder) (Calculator, error)
+
+type ResultDbMapper interface {
+	PrepareSchema(builder database.SchemaBuilder) error
+	DataIntoInsertCommand(data map[string]interface{}) *database.InsertCommand
+}
+
+type MapperFactoryFunc func() ResultDbMapper

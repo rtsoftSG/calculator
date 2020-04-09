@@ -1,17 +1,22 @@
 package database
 
-type ColumnType int
+type DataType int
 
 const (
-	_ ColumnType = iota
+	_ DataType = iota
+	TypeInt8
 	TypeInt32
 	TypeInt64
+	Float64
+	String
+	ArrayInt64
+	ArrayFloat64
 )
 
 type (
 	Column struct {
-		name    string
-		colType ColumnType
+		name     string
+		dataType DataType
 	}
 	SchemaBuilder interface {
 		SetTableName(string) SchemaBuilder
@@ -20,6 +25,14 @@ type (
 	}
 )
 
-func NewColumn(name string, colType ColumnType) Column {
+func NewColumn(name string, colType DataType) Column {
 	return Column{name, colType}
+}
+
+func (c *Column) DataType() DataType {
+	return c.dataType
+}
+
+func (c *Column) Name() string {
+	return c.name
 }
