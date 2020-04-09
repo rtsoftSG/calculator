@@ -1,8 +1,8 @@
 package toplevel
 
 import (
-	"plugin/toolbox/cache"
-	"plugin/toolbox/database"
+	"github.com/rtsoftSG/plugin/toolbox/cache"
+	"github.com/rtsoftSG/plugin/toolbox/database"
 	"time"
 )
 
