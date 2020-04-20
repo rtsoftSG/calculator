@@ -30,6 +30,8 @@ type CalculatorFactoryFunc func(id string, cfg string, cache cache.Storage, qb d
 
 type ResultDbMapper interface {
 	PrepareSchema(builder database.SchemaBuilder) error
+	SubscribedTo() string
+
 	DataIntoInsertCommand(data map[string]interface{}) *database.InsertCommand
 }
 
