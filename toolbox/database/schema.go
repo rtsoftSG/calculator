@@ -7,10 +7,10 @@ const (
 	TypeInt8
 	TypeInt32
 	TypeInt64
-	Float64
-	String
-	ArrayInt64
-	ArrayFloat64
+	TypeFloat64
+	TypeString
+	TypeArrayInt64
+	TypeArrayFloat64
 )
 
 type (
