@@ -35,4 +35,7 @@ type ResultDbMapper interface {
 	DataIntoInsertCommand(data map[string]interface{}) *database.InsertCommand
 }
 
-type MapperFactoryFunc func() ResultDbMapper
+// MappersFactoryFunc must return mappers that will be registered for handle incoming data.
+//
+// Function name must be GetMappers.
+type MappersFactoryFunc func() []ResultDbMapper
