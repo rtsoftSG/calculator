@@ -34,7 +34,7 @@ type ResultDbMapper interface {
 	PrepareSchema(builder database.SchemaBuilder) error
 	SubscribedTo() string
 
-	DataIntoInsertCommand(data map[string]interface{}) *database.InsertCommand
+	DataIntoInsertCommands(data map[string]interface{}) []*database.InsertCommand
 }
 
 // MappersFactoryFunc must return mappers that will be registered for handle incoming data.
