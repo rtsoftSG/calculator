@@ -12,6 +12,8 @@ type CalculationResult interface {
 	Type() string
 	//Time return time.Time associated with calculation result.
 	Time() time.Time
+	//Sources return list of sources(actor names).
+	Sources() []string
 	//CalculatorId return calculator instance unique id (it will be used as ActorName in measurement).
 	CalculatorId() string
 	//Fields return calculation data.
@@ -26,7 +28,7 @@ type Calculator interface {
 // CalculatorFactoryFunc creates calculator instance. This function must be realized by every plugin that provides calculator functionality.
 //
 // NewCalculator function with such signature has to be implemented in order to lookup calculator.
-type CalculatorFactoryFunc func(id string, cfg string, cache cache.Storage, qb database.QueryBuilder) (Calculator, error)
+type CalculatorFactoryFunc func(id string, cfg string, cache cache.Storage, qff database.QueryFactoryFunc) (Calculator, error)
 
 type ResultDbMapper interface {
 	PrepareSchema(builder database.SchemaBuilder) error
