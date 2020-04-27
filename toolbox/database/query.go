@@ -9,6 +9,7 @@ type Query interface {
 	OrWhere(expr string, args ...interface{}) Query
 	GroupBy(columns ...string) Query
 	Having(expr string, args ...interface{}) Query
+	OrderBy(columns ...string) Query
 	Limit(l int) Query
 	Offset(o int) Query
 	ToSql() (string, []interface{}, error)
