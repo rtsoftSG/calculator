@@ -18,8 +18,9 @@ type CalculationResult interface {
 	CalculatorId() string
 	//Fields return calculation data.
 	Fields() interface{}
-	// UUID return calculator uuid
-	UUID() string
+	//// UUID return calculator uuid
+	// tmp disabled
+	//UUID() string
 }
 
 // Common interface for algorithms.
@@ -30,7 +31,8 @@ type Calculator interface {
 // CalculatorFactoryFunc creates calculator instance. This function must be realized by every plugin that provides calculator functionality.
 //
 // NewCalculator function with such signature has to be implemented in order to lookup calculator.
-type CalculatorFactoryFunc func(id, uuid string, cfg string, cache cache.Storage, qff database.QueryFactoryFunc) (Calculator, error)
+//type CalculatorFactoryFunc func(id, uuid string, cfg string, cache cache.Storage, qff database.QueryFactoryFunc) (Calculator, error)
+type CalculatorFactoryFunc func(id string, cfg string, cache cache.Storage, qff database.QueryFactoryFunc) (Calculator, error)
 
 type ResultDbMapper interface {
 	PrepareSchema(builder database.SchemaBuilder) error
