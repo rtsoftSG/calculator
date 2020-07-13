@@ -11,6 +11,11 @@ const (
 	TypeString
 	TypeArrayInt64
 	TypeArrayFloat64
+
+	TypeNullInt8
+	TypeNullInt64
+	TypeNullFloat64
+	TypeNullString
 )
 
 type (
