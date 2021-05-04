@@ -40,7 +40,12 @@ const (
 	TypeNullInt16
 	TypeNullInt32
 	TypeNullInt64
-
+	
+	TypeNullUint8
+	TypeNullUint16
+	TypeNullUint32
+	TypeNullUint64
+	
 	TypeNullFloat32
 	TypeNullFloat64
 
