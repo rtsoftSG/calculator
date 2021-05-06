@@ -4,6 +4,7 @@ type (
 	Field struct {
 		name  string
 		value interface{}
+		status int
 	}
 	InsertCommand struct {
 		tableName string
@@ -33,6 +34,10 @@ func (f *Field) Value() interface{} {
 
 func (f *Field) Name() string {
 	return f.name
+}
+
+func (f *Field) Status() int {
+	return f.status
 }
 
 func (i *InsertCommand) WithFields(fields ...*Field) *InsertCommand {
