@@ -25,7 +25,11 @@ func (i *InsertCommand) TableName() string {
 }
 
 func NewField(name string, value interface{}) *Field {
-	return &Field{name, value}
+	return &Field{name, value, 0}
+}
+
+func NewFieldWithStatus(name string, value interface{}, status int) *Field {
+	return &Field{name, value, status}
 }
 
 func (f *Field) Value() interface{} {
