@@ -40,6 +40,10 @@ func (f *Field) Status() int {
 	return f.status
 }
 
+func (f *Field) SetStatus(status int) {
+	f.status = status
+}
+
 func (i *InsertCommand) WithFields(fields ...*Field) *InsertCommand {
 	i.fields = append(i.fields, fields...)
 	return i
